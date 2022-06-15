@@ -1,4 +1,10 @@
 #include <iostream> 
+#include <cstdlib>
+#include <conio.h>
+#include <string.h>
+#include <dos.h>
+#include <iomanip>
+
 using namespace std; 
 struct buku 
 {
@@ -13,3 +19,54 @@ struct pinjam
 	char alamat[40];
 	char status;
 }pinjembuku[100]; 
+
+int main(){
+	system("cls");
+	
+	int jmlbuk,a,c,e,f,g,h,jmlpin,hs,lp,kodepin,stok;
+	int b =-1; 
+	int d =-1;
+	char yn,ch,temp;
+	
+	login:
+	string user = "";
+	string pass = "";
+	cout<<"\n\n\n\n\n\n\n\n";
+	cout<<"\t\t ------- Perpustakaan sederhana--------\n\n";
+	cout << "\t\t\t  Username : "; cin>>user;
+	cout << "\t\t\t  Password : ";
+	ch = _getch();
+	
+    while(ch != 13){ //character 13 is enter
+    pass.push_back(ch);
+    cout << '*';
+    ch = _getch();
+    }
+    cout<<endl;
+	if(user == "Himakom" && pass == "222"){
+		cout << "\n\n Anda berhasil login. \n" << endl;
+		system("pause");
+		system("cls");
+		 goto menu;
+	}else{
+	    cout<<" Password Salah \n";
+   	    system("pause");
+   	    system("cls");
+	 	goto login;
+	}
+	menu: 
+	int pil; 
+    cout<<"---- Program Perpustakaan ----"<<endl;
+    cout<<"-------- Menu ----------\n";
+    cout<<" 1. Tambah Buku        \n";
+    cout<<" 2. Daftar Buku       \n";
+    cout<<" 3. Buku yang dipinjam     \n";
+    cout<<" 4. Pengembalian buku   \n";
+    cout<<" 5. Laporan   \n";
+    cout<<" 6. Exit                \n";
+    cout<<"----------------------\n";
+    cout<<"Masukan Pilihan [ 1 s.d. 6 ] = ";cin>>pil
+
+
+
+}
